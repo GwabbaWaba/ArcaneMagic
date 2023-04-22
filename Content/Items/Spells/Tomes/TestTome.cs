@@ -8,7 +8,7 @@ namespace ArcaneMagic.Content.Items.Spells.Tomes
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Test tome");
+            // Tooltip.SetDefault("Test tome");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }

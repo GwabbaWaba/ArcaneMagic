@@ -1,4 +1,5 @@
-﻿using Terraria.ID;
+﻿using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Terraria.Localization;
@@ -9,7 +10,7 @@ namespace ArcaneMagic.Content.Items.Spells
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Fades in your inventory");
+            // Tooltip.SetDefault("Fades in your inventory");
         }
 
 		public override void UpdateInventory(Player player)
@@ -48,7 +49,7 @@ namespace ArcaneMagic.Content.Items.Spells
 			recipe.AddCondition(NetworkText.FromKey("10 Mana"), r => Main.LocalPlayer.statMana >= 10);
 			recipe.Register();
 		}
-        public override void OnCreate(ItemCreationContext recipe)
+        public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 15;
         }

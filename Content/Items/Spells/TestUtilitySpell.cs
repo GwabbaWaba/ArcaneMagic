@@ -1,4 +1,5 @@
-﻿using Terraria.ID;
+﻿using Terraria.DataStructures;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
 using Terraria.Localization;
@@ -11,9 +12,9 @@ namespace ArcaneMagic.Content.Items.Spells
 
 		public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Fades in your inventory" +
+            /* Tooltip.SetDefault("Fades in your inventory" +
                 "\nWeak spell which heals you for " + HEAL_AMOUNT.ToString() + " hp" +
-                "\nApplies potion sickness");
+                "\nApplies potion sickness"); */
         }
 
 		public override void UpdateInventory(Player player)
@@ -57,7 +58,7 @@ namespace ArcaneMagic.Content.Items.Spells
 			recipe.AddCondition(NetworkText.FromKey("No potion sickness"), r => !Main.LocalPlayer.HasBuff(BuffID.PotionSickness));
 			recipe.Register();
 		}
-        public override void OnCreate(ItemCreationContext recipe)
+        public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 50;
         }
