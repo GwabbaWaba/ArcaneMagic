@@ -6,17 +6,12 @@ using Terraria.Localization;
 
 namespace ArcaneMagic.Content.Items.Spells
 {
-    public class TestSpell : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+	public class TestSpell : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
 			// Tooltip.SetDefault("Fades in your inventory");
 			Item.ResearchUnlockCount = -1;
-        }
-
-		public override void UpdateInventory(Player player)
-		{
-			// Item.TurnToAir();
 		}
 		public override void SetDefaults()
 		{
@@ -32,15 +27,15 @@ namespace ArcaneMagic.Content.Items.Spells
 			Item.rare = ItemRarityID.Green;
 			Item.UseSound = SoundID.Item71;
 			Item.autoReuse = true;
-			Item.shoot = ProjectileID.ChlorophyteOrb; 
+			Item.shoot = ProjectileID.ChlorophyteOrb;
 			Item.shootSpeed = 20; // How fast the item shoots the projectile.
 			Item.crit = 32; // crit chance
 			Item.noUseGraphic = true;
 
-			Item.maxStack = 3; 
+			Item.maxStack = 3;
 			Item.consumable = true;
 
-			
+
 		}
 
 		// crafting
@@ -49,13 +44,13 @@ namespace ArcaneMagic.Content.Items.Spells
 
 			CreateRecipe(3)
 				.AddCondition(Language.GetOrRegister("Has Test Tome"), () => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()))
-                .AddCondition(Language.GetOrRegister("10 Mana"), () => Main.LocalPlayer.statMana >= 20)
-                .AddCondition(Language.GetOrRegister("Not in inventory"), () => !Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.TestSpell>()))
+				.AddCondition(Language.GetOrRegister("10 Mana"), () => Main.LocalPlayer.statMana >= 20)
+				.AddCondition(Language.GetOrRegister("Not in inventory"), () => !Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.TestSpell>()))
 				.Register();
 		}
-        public override void OnCreated(ItemCreationContext recipe)
-        {
+		public override void OnCreated(ItemCreationContext recipe)
+		{
 			Main.LocalPlayer.statMana -= 20;
-        }
-    }
+		}
+	}
 }

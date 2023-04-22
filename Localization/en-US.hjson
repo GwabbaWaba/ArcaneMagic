@@ -24,6 +24,11 @@ Mods: {
 				Tooltip: Shoots a decently strong series of bolts.
 				DisplayName: Test Spell
 			}
+
+			AnotherTestSpell: {
+				DisplayName: Another Test Spell
+				Tooltip: ""
+			}
 		}
 	}
 }
