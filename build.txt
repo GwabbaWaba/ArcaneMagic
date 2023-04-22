@@ -1,0 +1,3 @@
+displayName = Arcane Magic
+author = Gwabba
+version = 0.1
