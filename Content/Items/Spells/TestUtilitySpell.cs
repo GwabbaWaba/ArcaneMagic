@@ -49,6 +49,7 @@ namespace ArcaneMagic.Content.Items.Spells
 		}
 
 		// crafting
+		/*
 		public override void AddRecipes()
 		{
 			Recipe recipe = Recipe.Create(ModContent.ItemType<Spells.TestUtilitySpell>(), 1);
@@ -58,6 +59,7 @@ namespace ArcaneMagic.Content.Items.Spells
 			recipe.AddCondition(NetworkText.FromKey("No potion sickness"), r => !Main.LocalPlayer.HasBuff(BuffID.PotionSickness));
 			recipe.Register();
 		}
+		*/
         public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 50;

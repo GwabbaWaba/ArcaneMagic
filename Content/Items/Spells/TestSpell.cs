@@ -42,6 +42,7 @@ namespace ArcaneMagic.Content.Items.Spells
 		}
 
 		// crafting
+		/*
 		public override void AddRecipes()
 		{
 			Recipe recipe = Recipe.Create(ModContent.ItemType<Spells.TestSpell>(), 3);
@@ -49,6 +50,7 @@ namespace ArcaneMagic.Content.Items.Spells
 			recipe.AddCondition(NetworkText.FromKey("10 Mana"), r => Main.LocalPlayer.statMana >= 10);
 			recipe.Register();
 		}
+		*/
         public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 15;

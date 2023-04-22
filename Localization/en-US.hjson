@@ -1,0 +1,25 @@
+Mods: {
+	ArcaneMagic: {
+		Items: {
+			TestTome: {
+				Tooltip: wowza
+				DisplayName: Test Tome
+			}
+
+			TestUtilitySpell: {
+				Tooltip:
+					'''
+					Fades in your inventory
+					Weak spell which heals you for 50 hp
+					Applies potion sickness
+					'''
+				DisplayName: Test Utitlity Spell
+			}
+
+			TestSpell: {
+				Tooltip: Fades in your inventory
+				DisplayName: Test Spell
+			}
+		}
+	}
+}
