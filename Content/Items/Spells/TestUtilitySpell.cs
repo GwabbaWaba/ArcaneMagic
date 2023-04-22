@@ -15,6 +15,7 @@ namespace ArcaneMagic.Content.Items.Spells
             /* Tooltip.SetDefault("Fades in your inventory" +
                 "\nWeak spell which heals you for " + HEAL_AMOUNT.ToString() + " hp" +
                 "\nApplies potion sickness"); */
+            Item.ResearchUnlockCount = -1;
         }
 
 		public override void UpdateInventory(Player player)
@@ -46,6 +47,7 @@ namespace ArcaneMagic.Content.Items.Spells
 
 			Item.maxStack = 1; 
 			Item.consumable = true;
+			Item.healLife = HEAL_AMOUNT;
 		}
 
 		// crafting

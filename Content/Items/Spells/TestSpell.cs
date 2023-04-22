@@ -35,6 +35,7 @@ namespace ArcaneMagic.Content.Items.Spells
 			Item.shoot = ProjectileID.ChlorophyteOrb; 
 			Item.shootSpeed = 20; // How fast the item shoots the projectile.
 			Item.crit = 32; // crit chance
+			Item.noUseGraphic = true;
 
 			Item.maxStack = 3; 
 			Item.consumable = true;
@@ -47,14 +48,14 @@ namespace ArcaneMagic.Content.Items.Spells
 		{
 
 			CreateRecipe(3)
-				.AddIngredient(ItemID.DirtBlock, 5)
 				.AddCondition(Language.GetOrRegister("Has Test Tome"), () => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()))
-				.AddCondition(Language.GetOrRegister("Not in inventory"), () => !Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.TestSpell>()))
+                .AddCondition(Language.GetOrRegister("10 Mana"), () => Main.LocalPlayer.statMana >= 20)
+                .AddCondition(Language.GetOrRegister("Not in inventory"), () => !Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.TestSpell>()))
 				.Register();
 		}
         public override void OnCreated(ItemCreationContext recipe)
         {
-			Main.LocalPlayer.statMana -= 15;
+			Main.LocalPlayer.statMana -= 20;
         }
     }
 }
