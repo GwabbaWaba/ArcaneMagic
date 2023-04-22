@@ -51,7 +51,7 @@ namespace ArcaneMagic.Content.Items.Spells
 		// crafting
 		public override void AddRecipes()
 		{
-			Recipe.Create(ModContent.ItemType<Spells.TestSpell>(), 3)
+			Recipe.Create(ModContent.ItemType<Spells.TestUtilitySpell>(), 3)
 				.AddCondition(Language.GetOrRegister("Test Tome"), () => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()))
 				.AddCondition(Language.GetOrRegister("50 Mana"), () => Main.LocalPlayer.statMana >= 50)
 				.AddCondition(Language.GetOrRegister("< max hp"), () => Main.LocalPlayer.statLife < Main.LocalPlayer.statLifeMax)
