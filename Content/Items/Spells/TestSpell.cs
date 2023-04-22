@@ -10,12 +10,13 @@ namespace ArcaneMagic.Content.Items.Spells
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("Fades in your inventory");
+			// Tooltip.SetDefault("Fades in your inventory");
+			Item.ResearchUnlockCount = -1;
         }
 
 		public override void UpdateInventory(Player player)
 		{
-			Item.TurnToAir();
+			// Item.TurnToAir();
 		}
 		public override void SetDefaults()
 		{
@@ -42,15 +43,15 @@ namespace ArcaneMagic.Content.Items.Spells
 		}
 
 		// crafting
-		/*
 		public override void AddRecipes()
 		{
-			Recipe recipe = Recipe.Create(ModContent.ItemType<Spells.TestSpell>(), 3);
-			recipe.AddCondition(NetworkText.FromKey("Test Tome"), r => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()));
-			recipe.AddCondition(NetworkText.FromKey("10 Mana"), r => Main.LocalPlayer.statMana >= 10);
-			recipe.Register();
+
+			CreateRecipe(3)
+				.AddIngredient(ItemID.DirtBlock, 5)
+				.AddCondition(Language.GetOrRegister("Has Test Tome"), () => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()))
+				.AddCondition(Language.GetOrRegister("Not in inventory"), () => !Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.TestSpell>()))
+				.Register();
 		}
-		*/
         public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 15;
