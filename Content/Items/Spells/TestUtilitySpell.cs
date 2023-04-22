@@ -49,18 +49,16 @@ namespace ArcaneMagic.Content.Items.Spells
 		}
 
 		// crafting
-		/*
 		public override void AddRecipes()
 		{
-			Recipe recipe = Recipe.Create(ModContent.ItemType<Spells.TestUtilitySpell>(), 1);
-			recipe.AddCondition(NetworkText.FromKey("Test Tome"), r => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()));
-			recipe.AddCondition(NetworkText.FromKey("50 Mana"), r => Main.LocalPlayer.statMana >= 50);
-			recipe.AddCondition(NetworkText.FromKey("< max hp"), r => Main.LocalPlayer.statLife < Main.LocalPlayer.statLifeMax);
-			recipe.AddCondition(NetworkText.FromKey("No potion sickness"), r => !Main.LocalPlayer.HasBuff(BuffID.PotionSickness));
-			recipe.Register();
+			Recipe.Create(ModContent.ItemType<Spells.TestSpell>(), 3)
+				.AddCondition(Language.GetOrRegister("Test Tome"), () => Main.LocalPlayer.HasItem(ModContent.ItemType<Items.Spells.Tomes.TestTome>()))
+				.AddCondition(Language.GetOrRegister("50 Mana"), () => Main.LocalPlayer.statMana >= 50)
+				.AddCondition(Language.GetOrRegister("< max hp"), () => Main.LocalPlayer.statLife < Main.LocalPlayer.statLifeMax)
+				.AddCondition(Language.GetOrRegister("No potion sickness"), () => !Main.LocalPlayer.HasBuff(BuffID.PotionSickness))
+				.Register();
 		}
-		*/
-        public override void OnCreated(ItemCreationContext recipe)
+		public override void OnCreated(ItemCreationContext recipe)
         {
 			Main.LocalPlayer.statMana -= 50;
         }
