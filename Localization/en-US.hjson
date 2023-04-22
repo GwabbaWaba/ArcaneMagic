@@ -2,7 +2,11 @@ Mods: {
 	ArcaneMagic: {
 		Items: {
 			TestTome: {
-				Tooltip: wowza
+				Tooltip:
+					'''
+					Ew, a book.
+					(I can't read)
+					'''
 				DisplayName: Test Tome
 			}
 
