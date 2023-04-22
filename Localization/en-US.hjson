@@ -21,7 +21,7 @@ Mods: {
 			}
 
 			TestSpell: {
-				Tooltip: Fades in your inventory
+				Tooltip: Shoots a decently strong series of bolts.
 				DisplayName: Test Spell
 			}
 		}
