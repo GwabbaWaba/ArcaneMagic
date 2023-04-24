@@ -8,7 +8,7 @@ namespace ArcaneMagic.Content.Items.Spells.Tomes
     {
         public override void SetDefaults()
         {
-            Item.DamageType = DamageClass.Magic;
+            base.SetDefaults();
             Item.damage = 30;
             Item.width = 32; // The item texture's width
             Item.height = 20; // The item texture's height

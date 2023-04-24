@@ -25,9 +25,13 @@ Mods: {
 				DisplayName: Test Spell
 			}
 
-			AnotherTestSpell: {
-				DisplayName: Another Test Spell
-				Tooltip: ""
+			GelTome: {
+				Tooltip:
+					'''
+					Congratulations,
+					You've stuck a bunch of gel into a book.
+					'''
+				DisplayName: Slimy Scrawlings
 			}
 		}
 	}
